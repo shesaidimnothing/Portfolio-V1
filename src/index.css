@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: #1d1d1f;
+  --background: #fbfbfd;
+}
+
+.dark {
+  --foreground: #fbfbfd;
+  --background: #1d1d1f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'SF Pro Display', 'Inter', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  transition: color 0.3s, background-color 0.3s;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-sm tracking-wide hover:opacity-50 transition-all duration-300 dark:text-white;
+  }
+
+  .skill-icon {
+    @apply w-16 h-16 grayscale hover:grayscale-0 transition-all duration-500 dark:invert;
+  }
+
+  .project-card {
+    @apply relative overflow-hidden rounded-3xl hover:scale-[1.02] transition-all duration-700 bg-white dark:bg-[#242424] shadow-lg dark:text-white;
+  }
+
+  .section-title {
+    @apply text-6xl font-semibold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  .section-subtitle {
+    @apply text-xl text-gray-500 dark:text-gray-400 mb-16 font-light leading-relaxed;
+  }
+
+  .apple-button {
+    @apply px-8 py-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300;
+  }
+
+  .language-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+
+  .language-button:hover {
+    background-color: #45a049;
+  }
+} 
